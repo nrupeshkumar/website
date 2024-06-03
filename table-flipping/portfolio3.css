@@ -1,0 +1,195 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+body,html{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.navcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navcontainer .logo,.navlist,.icon{
+    padding: 30px 30px;
+    font-size: 20px;
+}
+.navcontainer .icon{
+    display: none;
+}
+.navcontainer .navlist img{
+    display: none;
+}
+.navcontainer .navlist a,.logo{
+    padding:10px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+color: rgb(153, 0, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 140px;
+    
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navlist a:hover{
+    background-color: blueviolet;
+    color: aliceblue;
+    font-size: 23px;
+    transform: scale(1.1);
+}
+@media only screen and (max-width:500px) {
+    .navcontainer .navlist{
+    
+ display: flex;
+ flex-direction: column;
+ width: 300px;
+ height: 500px;
+ align-items: center;
+ justify-content: center;
+ background-color: aliceblue;
+ position: absolute;
+ top: 0;
+ right: 0;
+ display: none;
+  z-index: 1;      
+}
+.navcontainer .navlist.lists{
+    display: flex;
+}
+
+.navcontainer .icon{
+    display: flex;
+    position: relative;
+
+}
+.navlist .cancelbar{
+    position: absolute;
+left: 0;
+    top: 0;
+    margin:30px;
+}
+.navcontainer .navlist img{
+    display: flex;
+}
+
+.navcontainer .navlist a{
+    padding:20px 10px;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+color: rgb(153, 0, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+font-size: 23px;
+
+}
+.navcontainer .logo{
+    font-size: 28px;
+}
+.navlist a:hover{
+    background-color: blueviolet;
+    color: aliceblue;
+    font-size: 23px;
+    transform: scale(1.1);
+}
+
+
+}
+
+@media only screen and  (min-width:501px) and (max-width:764px) {
+    .navcontainer .navlist{
+    
+ display: flex;
+ flex-direction: column;
+ width: 300px;
+ height: 500px;
+ align-items: center;
+ justify-content: center;
+ background-color: aliceblue;
+ position: absolute;
+ top: 0;
+ right: 0;
+ display: none;
+  z-index: 1;      
+}
+.navcontainer .navlist.lists{
+    display: flex;
+}
+
+.navcontainer .icon{
+    display: flex;
+    position: relative;
+
+}
+.navlist .cancelbar{
+    position: absolute;
+left: 0;
+    top: 0;
+    margin:30px;
+}
+.navcontainer .navlist img{
+    display: flex;
+}
+
+.navcontainer .navlist a{
+    padding:20px 10px;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+color: rgb(153, 0, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+font-size: 23px;
+
+}
+.navcontainer .logo{
+    font-size: 28px;
+}
+.navlist a:hover{
+    background-color: blueviolet;
+    color: aliceblue;
+    font-size: 23px;
+    transform: scale(1.1);
+}
+
+
+}
+@media only screen and  (min-width:765px) and (max-width:900px) {
+    .navcontainer{
+    
+ display: flex;
+ flex-direction: column;
+ 
+}
+.navcontainer .navlist{
+    width: 100%;
+}
+
+.navlist a{
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+
+}
+@keyframes anime{
+    0%{
+        transform: translate(0%);
+    }
+    100%{
+        transform: translate(100%);
+    }
+}
