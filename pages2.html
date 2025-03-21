@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 2</title>
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/pages2.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+  <style>
+   
+  </style>
+</head>
+<body>
+ <!-- Gradient Circle Loader -->
+ <div id="loaderOverlay">
+  <div class="circleLoader">welcome</div>
+</div>
+
+<nav>
+  <div class="navbar">
+    <div class="logo"><img style="border-radius: 50%;background-color: aliceblue;padding: 10px;" src="./images/ctms-logo2.png" width="150px" alt=""></div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu" id="navMenu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero-slider">
+  <div class="slides-container">
+    <!-- Slides -->
+    <div class="slide active">
+      <div class="circle"></div>
+      <div class="slider">
+      <h2>fresher bridge program</h2>
+      <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+      </div>
+      <div>
+
+      </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;" class="slider">
+        <h2>salesforce training</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div class="slider">
+        <h2>digital marketing</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div class="slider">
+        <h2>java training</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div class="slider">
+        <h2>python training</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div class="slider">
+        <h2>full stack development training</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div class="slider">
+        <h2>google analysis</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+    <div class="slide">
+      <div class="circle"></div>
+      <div class="slider">
+        <h2>placement training</h2>
+        <button style="margin: 15px;" class="circle-button"><span>Click Me</span></button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots" id="dots"></div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  <script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loaderOverlay");
+    const content = document.querySelector("Content");
+    setTimeout(() => {
+      loader.style.display = "none";
+
+    }
+  ,1000);
+     // Same time as animation duration
+     
+  });
+  
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('dots');
+
+let currentSlide = 0;
+
+// Create dots dynamically
+slides.forEach((_, index) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if (index === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => moveToSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
+function moveToSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+
+  currentSlide = index;
+
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+
+  // Restart circle animation
+  const circle = slides[currentSlide].querySelector('.circle');
+  circle.style.animation = 'none';
+  circle.offsetHeight; // trigger reflow
+  circle.style.animation = null;
+}
+
+// Auto slide every 4 seconds
+setInterval(() => {
+  let nextSlide = (currentSlide + 1) % slides.length;
+  moveToSlide(nextSlide);
+}, 4000);
+// const hamburger = document.getElementById('hamburger');
+// const navLinks = document.getElementById('navLinks');
+
+// hamburger.addEventListener('click', () => {
+//   navLinks.classList.toggle('show');
+// });
+function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("active");
+    }
+    
+</script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+
+</html>
